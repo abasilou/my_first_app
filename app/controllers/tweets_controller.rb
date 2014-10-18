@@ -6,7 +6,21 @@ class TweetsController < ApplicationController
 
 	def create
 		@tweet_to_create = Tweet.new(tweet_params)
-		@tweet_to_create.save
+		if @tweet_to_create.save
+			flash.now["success"] = "you have created a tweet"
+		else
+			flash.now["danger"] = "please review the errors below."
+		end
+
+
+
+
+
+
+
+
+
+
 		print "the tweet is" + @tweet.inspect.to_s
 
 		@tweet = Tweet.new
