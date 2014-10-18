@@ -1,0 +1,2 @@
+module DougsHelper
+end
