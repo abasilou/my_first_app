@@ -27,15 +27,15 @@
 		        <li class="active">
 		        <%= link_to "New Tweet Page", new_tweet_path %>	
 		        </li>
-		        <li>
+		        
 		        	<% if user_signed_in? %>
-		        	<%= link_to "log out", destroy_user_session_path, method: "delete" %>
+		        	<li><%= link_to "log out", destroy_user_session_path, method: "delete" %><li>
 
 		        	<% else %>
-
-		        	<%= link_to "Sign up", new_user_registration_path %>
+		        	<li><%= link_to "Sign up", new_user_registration_path %><li>
+		        	<li><%= link_to "Sign in", new_user_session_path %><li>
 		            <% end%>
-		            </li>
+		            
 		            
 		        </ul>
 
