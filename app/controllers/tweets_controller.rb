@@ -45,6 +45,14 @@ class TweetsController < ApplicationController
 		@users = User.all.reject{|user| user == current_user}
 	end
 
+	def process_form_to_follow_user
+		@users = User.all.reject{|user| user == current_user} 
+		@user = User.find(params["user"]["user_to_follow"])
+		current_user.follow(@user)
+
+		render 'index'
+	end
+
 	def tweet_params
 		params.require("tweet").permit("conten")
 	end
